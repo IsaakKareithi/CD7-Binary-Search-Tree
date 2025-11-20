@@ -37,7 +37,7 @@ def insert(node, key):
 def inorder(root):
     if root:
         inorder(root.left)
-        print(root.key, end='')
+        print(root.key, end=' ')
         inorder(root.right)
 
 #Driver code
