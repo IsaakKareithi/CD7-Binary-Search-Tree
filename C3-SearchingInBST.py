@@ -30,6 +30,21 @@ def inorder(root):
         print(root.val)
         inorder(root.right)
 
+#A utilityy function to search for a given key
+def search(root, key):
+
+    # Base Case: root is null or key is present at root 
+    if root is None or root.val == key:
+        return root 
+    
+    #key is greater than root's key
+    if root.val < key:
+        return search(root.right, key)
+    
+    #key is smaller than root's key 
+    if root.val > key:
+        return search(root.left, key)
+
 #Driver program to test the above functions
 # Let us create the following BST
 #             50
@@ -48,3 +63,10 @@ r = insert(r, 80)
 
 # Print inorder traversal of BST
 inorder(r)
+
+a = int(input("Enter value to be searched: "))
+
+if search(r, a):
+    print(a," is found")
+else:
+    print(a," is not found")
